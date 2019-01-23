@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
@@ -6,17 +6,28 @@ import promise from 'redux-promise'
 
 // const typicalMiddleware = store => next => action => next(action)
 
-const configureStore = () => {
+export default () => {
     const middlewares = [promise, thunk]
-    const argument = [rootReducer]
+    const composeEnhancers =
+        typeof window === 'object' &&
+            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+                // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+            }) : compose;
+
+
+
 
     if (process.env.NODE_ENV !== 'production') {
         middlewares.push(createLogger())
-        argument.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
     }
 
-    argument.push(applyMiddleware(...middlewares))
-    return createStore(...argument)
-}
+    const enhancer = composeEnhancers(
+        applyMiddleware(...middlewares),
+    )
 
-export default configureStore
+    return createStore(
+        rootReducer,
+        enhancer
+    )
+}
