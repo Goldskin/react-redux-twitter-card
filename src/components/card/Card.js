@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Avatar from "../avatar/Avatar";
 import CardInfo from "../card-info/Card-info";
+import CardLike from "../../containers/card-like/Card-like";
 import './Card.css';
 
 class Card extends Component {
@@ -10,14 +11,18 @@ class Card extends Component {
                 <div className="card">
                     <div className="row">
                         <Avatar
-                          url="https://www.myquickidea.com/wp-content/uploads/2017/09/image-29.jpg"
+                            url="https://www.myquickidea.com/wp-content/uploads/2017/09/image-29.jpg"
                         />
                         <div className="col">
-                            <CardInfo
-                              name="Goldskin"
-                              alias="@goldskin"
-                              date={new Date()}
-                            />
+                            <div className="row">
+                                <CardInfo
+                                    name="Goldskin"
+                                    alias="@goldskin"
+                                    date={new Date()}
+                                />
+
+                                <CardLike />
+                            </div>
                         </div>
                     </div>
                 </div>
