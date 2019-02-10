@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { likeCounter } from './count';
+import { cards } from './card';
 
 export default combineReducers({
-    likeCounter
+    cards
 })

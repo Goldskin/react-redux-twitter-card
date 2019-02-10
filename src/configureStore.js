@@ -3,10 +3,15 @@ import rootReducer from './reducers'
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise'
+import v4 from 'uuid'
 
 // const typicalMiddleware = store => next => action => next(action)
 
 export default () => {
+    const initialState = {
+        cards: [{ id: v4(), like: 0 }]
+    };
+
     const middlewares = [promise, thunk]
     const composeEnhancers =
         typeof window === 'object' &&
@@ -25,6 +30,7 @@ export default () => {
 
     return createStore(
         rootReducer,
+        initialState,
         enhancer
     )
 }
