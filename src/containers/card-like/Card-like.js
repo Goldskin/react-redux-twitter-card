@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { addLike } from '../../actions'
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state)
     return {
         like: state.cards[0].like
     }
@@ -12,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     debugger
     return {
-        action: () => dispatch(addLike())
+        action: () => dispatch(addLike(ownProps.id))
     }
 }
 

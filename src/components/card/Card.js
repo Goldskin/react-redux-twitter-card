@@ -6,6 +6,7 @@ import './Card.css';
 
 class Card extends Component {
     render () {
+        console.log()
         return (
             <div className="h-100 d-flex justify-content-center align-items-center">
                 <div className="card">
@@ -21,7 +22,7 @@ class Card extends Component {
                                     date={new Date()}
                                 />
 
-                                <CardLike />
+                                <CardLike id={this.props.id} />
                             </div>
                         </div>
                     </div>

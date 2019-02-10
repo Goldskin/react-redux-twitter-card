@@ -5,7 +5,7 @@ const Cardlike = props => (
     <ul>
         {props.cards.map(card => (
             <li key={card.id} >
-                <Card card={card}/>
+                <Card {...card}/>
             </li>
         ))}
     </ul>
