@@ -9,7 +9,7 @@ import v4 from 'uuid'
 
 export default () => {
     const initialState = {
-        cards: [{ id: v4(), like: 0 }]
+        cards: [{ id: v4(), like: 0 }, { id: v4(), like: 2 }]
     };
 
     const middlewares = [promise, thunk]

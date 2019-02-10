@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Avatar from "../avatar/Avatar";
 import CardInfo from "../card-info/Card-info";
-import CardLike from "../../containers/card-like/Card-like";
+import CardLike from "../card-like/Card-like";
 import './Card.css';
 
 class Card extends Component {
     render () {
-        console.log()
         return (
             <div className="h-100 d-flex justify-content-center align-items-center">
                 <div className="card">
@@ -21,8 +20,10 @@ class Card extends Component {
                                     alias="@goldskin"
                                     date={new Date()}
                                 />
-
-                                <CardLike id={this.props.id} />
+                                <CardLike
+                                    action={() => this.props.clickOnLike()}
+                                    like={this.props.like}
+                                />
                             </div>
                         </div>
                     </div>

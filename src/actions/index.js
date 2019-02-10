@@ -1,9 +1,11 @@
 import ACTIONS from '../actions-type/cards';
 
-export const addLike = () => ({
-    type: ACTIONS.CARD.LIKE_INCREMENT
+export const addLike = (id) => ({
+    type: ACTIONS.CARD.LIKE_INCREMENT,
+    id
 })
 
-export const removeLike = () => ({
-    type: ACTIONS.CARD.LIKE_DECREMENT
+export const removeLike = (id) => ({
+    type: ACTIONS.CARD.LIKE_DECREMENT,
+    id
 })

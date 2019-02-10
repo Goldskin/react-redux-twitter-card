@@ -11,7 +11,7 @@ export const cards = (state = [], action) => {
                 }
             ]
         case ACTIONS.CARD.LIKE_INCREMENT:
-            index = state.indexOf(elem => elem.id === action.id)
+        index = state.findIndex(elem => elem.id === action.id)
             return [
                 ...state.slice(0, index),
                 {
@@ -21,7 +21,7 @@ export const cards = (state = [], action) => {
                 ...state.slice(index + 1, state.length)
             ]
         case ACTIONS.CARD.LIKE_DECREMENT:
-            index = state.indexOf(elem => elem.id === action.id)
+            index = state.findIndex(elem => elem.id === action.id)
             return [
                 ...state.slice(0, index),
                 {
@@ -31,7 +31,7 @@ export const cards = (state = [], action) => {
                 ...state.slice(index + 1, state.length)
             ]
         case ACTIONS.CARD.DELETE:
-            index = state.indexOf(elem => elem.id === action.id)
+            index = state.findIndex(elem => elem.id === action.id)
             return [
                 ...state.slice(0, index),
                 ...state.slice(index + 1, state.length)

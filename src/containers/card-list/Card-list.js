@@ -6,7 +6,9 @@ const mapStateToProps = (state, ownProps) => ({
     cards: state.cards
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({})
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    clickOnLike: id => dispatch(addLike(id))
+})
 
 
 export default connect(

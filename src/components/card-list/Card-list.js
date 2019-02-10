@@ -4,8 +4,11 @@ import Card from '../card/Card';
 const Cardlike = props => (
     <ul>
         {props.cards.map(card => (
-            <li key={card.id} >
-                <Card {...card}/>
+            <li key={card.id}>
+                <Card
+                    {...card} 
+                    clickOnLike={() => props.clickOnLike(card.id)}
+                />
             </li>
         ))}
     </ul>
