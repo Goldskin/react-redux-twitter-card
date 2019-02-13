@@ -1,4 +1,4 @@
-import ACTIONS from '../actions-type/cards';
+import ACTIONS from '../actions-type/card';
 export const cards = (state = [], action) => {
     let index
     switch (action.type) {

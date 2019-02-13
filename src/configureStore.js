@@ -8,9 +8,16 @@ import v4 from 'uuid'
 // const typicalMiddleware = store => next => action => next(action)
 
 export default () => {
-    const initialState = {
-        cards: [{ id: v4(), like: 0 }, { id: v4(), like: 2 }]
-    };
+    const initialState = {}
+    initialState.users = [
+        { id: v4(), name: 'Charles Strube', alias: 'goldskin' },
+        { id: v4(), name: 'Ana Maria', alias: 'ananas' },
+    ]
+    initialState.cards = [
+        { id: v4(), like: 0, user: initialState.users[0].id},
+        { id: v4(), like: 2, user: initialState.users[1].id}
+    ]
+
 
     const middlewares = [promise, thunk]
     const composeEnhancers =

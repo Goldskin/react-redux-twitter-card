@@ -16,7 +16,7 @@ class Card extends Component {
                         <div className="col">
                             <div className="row">
                                 <CardInfo
-                                    name="Goldskin"
+                                    name="Charles Strube"
                                     alias="@goldskin"
                                     date={new Date()}
                                 />
