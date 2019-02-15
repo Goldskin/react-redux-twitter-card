@@ -21,7 +21,7 @@ class Card extends Component {
                                     date={new Date()}
                                 />
                                 <CardLike
-                                    action={() => this.props.clickOnLike()}
+                                    action={() => this.props.onLike()}
                                     like={this.props.like}
                                 />
                             </div>

@@ -1,17 +1,18 @@
 import React from 'react';
 import Card from '../card/Card';
 
-const Cardlike = props => (
-    <ul>
+const Cardlike = props => {
+    console.log(props)
+    return <ul>
         {props.cards.map(card => (
             <li key={card.id}>
                 <Card
-                    {...card} 
-                    clickOnLike={() => props.clickOnLike(card.id)}
+                    {...card}
+                    onLike={() => props.addLike(card.id)}
                 />
             </li>
         ))}
     </ul>
-)
+}
 
 export default Cardlike;
