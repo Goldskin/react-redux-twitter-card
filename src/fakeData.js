@@ -16,8 +16,21 @@ const secondUser = {
 const initialState = {
     users: [firstUser, secondUser],
     cards: [
-        { id: v4(), like: 0, userId: firstUser.id },
-        { id: v4(), like: 2, userId: secondUser.id }
+        {
+            id: v4(),
+            like: 0,
+            userId: firstUser.id
+        },
+        {
+            id: v4(),
+            like: 2,
+            userId: secondUser.id
+        },
+        {
+            id: v4(),
+            like: 0,
+            userId: firstUser.id
+        },
     ]
 }
 

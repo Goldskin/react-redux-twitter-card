@@ -3,13 +3,11 @@ import './Avatar.css';
 
 function Avatar (props) {
     return (
-        <div className="col avatar-col">
-            <div className="avatar-container">
-                <img
-                    src={props.url}
-                    alt="avatar"
-                />
-            </div>
+        <div className="avatar-container">
+            <img
+                src={props.url}
+                alt="avatar"
+            />
         </div>
     )
 }
