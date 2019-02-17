@@ -1,20 +1,19 @@
 .avatar-container {
-  display: inline-block;
-  height: 54px;
-  width: 54px;
-  overflow: hidden;
-  border-radius: 50%;
-  position: relative;
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -3.75rem;
 }
 
-
-
 .avatar-container img {
-  height: 100%;
-  width:auto;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 50%;
-  transform: translateX(50%);
+    height: 100%;
+    width:auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
 }

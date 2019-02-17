@@ -1,10 +1,11 @@
 .card {
-  width: 550px;
-  box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.3);
-  border-radius: 10px;
-  padding: 1rem;
+    width: 550px;
+    box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    padding-left: 4.5rem;
 }
 
 .card .avatar-col {
-  max-width: 85px;
+    max-width: 85px;
 }
