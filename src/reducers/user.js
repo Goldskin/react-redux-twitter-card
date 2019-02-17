@@ -21,3 +21,7 @@ export const users = (state = [], action) => {
             return state
     }
 }
+
+export const getUser = (state, id) => {
+    return state.users[state.users.findIndex(user => user.id === id)]
+}

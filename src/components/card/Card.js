@@ -11,17 +11,17 @@ class Card extends Component {
                 <div className="card">
                     <div className="row">
                         <Avatar
-                            url="https://www.myquickidea.com/wp-content/uploads/2017/09/image-29.jpg"
+                            url={this.props.user.avatar}
                         />
                         <div className="col">
                             <div className="row">
                                 <CardInfo
-                                    name="Charles Strube"
-                                    alias="@goldskin"
+                                    name={this.props.user.name}
+                                    alias={`@${this.props.user.alias}`}
                                     date={new Date()}
                                 />
                                 <CardLike
-                                    action={() => this.props.onLike()}
+                                    action={() => this.props.addLike(this.props.id)}
                                     like={this.props.like}
                                 />
                             </div>

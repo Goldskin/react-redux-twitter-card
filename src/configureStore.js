@@ -3,22 +3,11 @@ import rootReducer from './reducers'
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise'
-import v4 from 'uuid'
+import initialState from './fakeData'
 
 // const typicalMiddleware = store => next => action => next(action)
 
 export default () => {
-    const initialState = {}
-    initialState.users = [
-        { id: v4(), name: 'Charles Strube', alias: 'goldskin' },
-        { id: v4(), name: 'Ana Maria', alias: 'ananas' },
-    ]
-    initialState.cards = [
-        { id: v4(), like: 0, user: initialState.users[0].id},
-        { id: v4(), like: 2, user: initialState.users[1].id}
-    ]
-
-
     const middlewares = [promise, thunk]
     const composeEnhancers =
         typeof window === 'object' &&

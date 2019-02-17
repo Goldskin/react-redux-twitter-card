@@ -1,15 +1,11 @@
 import React from 'react';
-import Card from '../card/Card';
+import Card from '../../containers/card/Card';
 
 const Cardlike = props => {
-    console.log(props)
-    return <ul>
+    return <ul className="list-unstyled">
         {props.cards.map(card => (
             <li key={card.id}>
-                <Card
-                    {...card}
-                    onLike={() => props.addLike(card.id)}
-                />
+                <Card {...card} />
             </li>
         ))}
     </ul>
