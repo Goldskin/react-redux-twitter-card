@@ -1,4 +1,5 @@
-import ACTIONS from '../actions-type/card';
+import ACTIONS from '../actions-type/card'
+import v4 from 'uuid/v4'
 export const cards = (state = [], action) => {
     let index
     switch (action.type) {
@@ -6,7 +7,7 @@ export const cards = (state = [], action) => {
             return [
                 ...state,
                 {
-                    id: action.id,
+                    id: action.id || v4(),
                     like: 0
                 }
             ]

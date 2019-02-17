@@ -1,4 +1,5 @@
 import ACTIONS from '../actions-type/user';
+import v4 from 'uuid/v4'
 export const users = (state = [], action) => {
     let index
     switch (action.type) {
@@ -6,7 +7,7 @@ export const users = (state = [], action) => {
             return [
                 ...state,
                 {
-                    id: action.id,
+                    id: action.id || v4(),
                     name: action.name,
                     alias: action.alias
                 }
