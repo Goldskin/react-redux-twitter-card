@@ -28,7 +28,12 @@ const initialState = {
         },
         {
             id: v4(),
-            like: 0,
+            like: 401239,
+            userId: firstUser.id
+        },
+        {
+            id: v4(),
+            like: 988,
             userId: firstUser.id
         },
     ]

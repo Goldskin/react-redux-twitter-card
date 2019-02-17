@@ -12,12 +12,30 @@ class Cardlike extends React.Component {
             noHover: false
         }
     }
-    render () {
-        const className = classnames({
+
+    getClass () {
+        return classnames({
             "is-animating": this.state.liked,
             "no-hover": this.state.noHover,
             "card-like": true
         })
+    }
+
+    formatedLike () {
+        if (this.props.like < 1000) {
+            return this.props.like
+        }
+
+        if (this.props.like < 1000000) {
+            return `${Math.floor(this.props.like / 1000)} K`
+        }
+
+        return `${Math.floor(this.props.like / 1000)} M`
+
+    }
+
+    render () {
+        const className = this.getClass()
 
         return (
             <button
@@ -33,7 +51,7 @@ class Cardlike extends React.Component {
                     noHover: false
                 })}
                 className={className}
-            >{this.props.like}</button>
+            >{this.formatedLike()}</button>
         )
     }
 }
