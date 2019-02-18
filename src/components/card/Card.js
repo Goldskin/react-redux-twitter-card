@@ -3,7 +3,6 @@ import Avatar from "../avatar/Avatar";
 import CardInfo from "../card-info/Card-info";
 import CardLike from "../card-like/Card-like";
 import CardContent from "../card-content/Card-content";
-import moment from 'moment'
 import './Card.css';
 
 class Card extends Component {
