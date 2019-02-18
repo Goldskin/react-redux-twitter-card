@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Avatar from "../avatar/Avatar";
 import CardInfo from "../card-info/Card-info";
 import CardLike from "../card-like/Card-like";
+import CardContent from "../card-content/Card-content";
+import moment from 'moment'
 import './Card.css';
 
 class Card extends Component {
@@ -15,8 +17,9 @@ class Card extends Component {
                             <CardInfo
                                 name={this.props.user.name}
                                 alias={this.props.user.alias}
-                                date={new Date()}
+                                date={new Date(this.props.date)}
                             />
+                            <CardContent text={this.props.text}/>
                         </div>
                     </div>
                     <div className="row">
