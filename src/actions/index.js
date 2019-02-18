@@ -1,7 +1,7 @@
 import ACTIONS from '../actions-type/card';
 
 export const addLike = (id) => (dispatch, getState) => dispatch({
-    type: ACTIONS.CARD.LIKE_INCREMENT,
+    type: ACTIONS.CARD.LIKE_TOGGLE,
     id
 })
 

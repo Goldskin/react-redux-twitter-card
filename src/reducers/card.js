@@ -8,7 +8,8 @@ export const cards = (state = [], action) => {
                 ...state,
                 {
                     id: action.id || v4(),
-                    like: 0
+                    like: 0,
+                    userLike: action.userLike || false
                 }
             ]
         case ACTIONS.CARD.LIKE_INCREMENT:
@@ -18,6 +19,17 @@ export const cards = (state = [], action) => {
                 {
                     ...state[index],
                     like: state[index].like + 1
+                },
+                ...state.slice(index + 1, state.length)
+            ]
+        case ACTIONS.CARD.LIKE_TOGGLE:
+            index = state.findIndex(elem => elem.id === action.id)
+            return [
+                ...state.slice(0, index),
+                {
+                    ...state[index],
+                    like: state[index].userLike ? state[index].like - 1 : state[index].like + 1,
+                    userLike: !state[index].userLike
                 },
                 ...state.slice(index + 1, state.length)
             ]
